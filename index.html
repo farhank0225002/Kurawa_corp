@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Nota Pesanan</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulir Nota Pesanan</h1>
+      <form id="orderForm">
+        <div class="form-group">
+          <label for="nama">Nama:</label>
+          <input type="text" id="nama" name="nama" required />
+        </div>
+
+        <div class="form-group">
+          <label for="tanggal">Tanggal:</label>
+          <input type="date" id="tanggal" name="tanggal" required />
+        </div>
+
+        <div class="form-group">
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" name="jumlah" min="1" required />
+        </div>
+
+        <div class="form-group">
+          <label>Jenis Kain:</label>
+          <div class="radio-group">
+            <label>
+              <input
+                type="radio"
+                name="jenisKain"
+                value="Combed 24s"
+                required
+              />
+              Combed 24s
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="jenisKain"
+                value="Combed 30s"
+                required
+              />
+              Combed 30s
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="namaKaos">Nama Kaos:</label>
+          <input type="text" id="namaKaos" name="namaKaos" required />
+        </div>
+
+        <div class="form-group">
+          <label for="nomorHp">Nomor HP:</label>
+          <input
+            type="tel"
+            id="nomorHp"
+            name="nomorHp"
+            pattern="[0-9]{10,12}"
+            required
+          />
+        </div>
+
+        <button type="submit">Buat Nota</button>
+      </form>
+
+      <div id="notaCard" class="card">
+        <h2>Nota Pesanan</h2>
+        <p>Nama: <span id="cardNama"></span></p>
+        <p>Tanggal: <span id="cardTanggal"></span></p>
+        <p>Jumlah: <span id="cardJumlah"></span></p>
+        <p>Jenis Kain: <span id="cardJenisKain"></span></p>
+        <p>Nama Kaos: <span id="cardNamaKaos"></span></p>
+        <p>Nomor HP: <span id="cardNomorHp"></span></p>
+      </div>
+
+      <button id="downloadButton" style="display: none">
+        Download Nota JPG
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
